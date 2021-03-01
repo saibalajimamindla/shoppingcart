@@ -14,7 +14,6 @@ public class Navigation {
 
 
 	public void navigating() {
-		Inventry inventry = new Inventry();
 		Scanner scan = new Scanner(System.in);
 		Admin admin = new Admin();
 		User user = new User();
@@ -90,7 +89,7 @@ public class Navigation {
 	}
 
 	public void callToAddCsvData() {
-		Inventry inventry = new Inventry();
+	Inventry inventry = new Inventry();
 		inventry.addingCsvData();
 		
 	}

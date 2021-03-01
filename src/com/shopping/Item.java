@@ -2,16 +2,16 @@ package com.shopping;
 
 public class Item {
 
-	private int ProductId;
+	private int productId;
 	private String productName;
 	private double ProductPrice;
-	private int ProductQuantity;
+	private int productQuantity;
 
 	public Item(int itemID, String itemName, double itemPrice, int itemQuantity) {
-		ProductId = itemID;
+		productId = itemID;
 		productName = itemName;
 		ProductPrice = itemPrice;
-		ProductQuantity = itemQuantity;
+		productQuantity = itemQuantity;
 
 	}
 	public Item()
@@ -21,7 +21,7 @@ public class Item {
 	
 
 	public int getID() {
-		return ProductId;
+		return productId;
 	}
 
 	public String getName() {
@@ -33,7 +33,7 @@ public class Item {
 	}
 
 	public int getQuantity() {
-		return ProductQuantity;
+		return productQuantity;
 	}
 
 	public double setPrice(double updatedPrice) {
@@ -42,14 +42,14 @@ public class Item {
 	}
 
 	public int setQuantity(int updatedQuantity) {
-		this.ProductQuantity = ProductQuantity + updatedQuantity;
-		return ProductQuantity;
+		this.productQuantity = productQuantity + updatedQuantity;
+		return productQuantity;
 	
 	}
 	
 	public int setQuantity(long upqa) {
-		this.ProductQuantity = (int)upqa;
-		return ProductQuantity;
+		this.productQuantity = (int)upqa;
+		return productQuantity;
 	
 	}
 

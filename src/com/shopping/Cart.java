@@ -10,12 +10,10 @@ public class Cart extends Inventry {
 	static int userCount = 1;
 	static double totalIncome=0;
 
-	public Cart() {
+	
 
-	}
-
-	private int ItemsInCart = 0;
-	private static ArrayList<Item> cart = new ArrayList();
+	private int cartItems = 0;
+	private static ArrayList<Item> cart = new ArrayList<>();
 	
 	public void cartAdd(int enteredProductId, int enteredQuantity) {
 		/**
@@ -30,7 +28,7 @@ public class Cart extends Inventry {
 					double price = inventryItem.getPrice();
 					int quant = enteredQuantity;
 					cart.add(new Item(id, name, price, quant));
-					ItemsInCart++;
+					cartItems++;
 					flag++;
 					System.out.println("Item " + enteredProductId + " added to cart");
 					long a = inventryItem.getQuantity() - enteredQuantity;
@@ -40,13 +38,13 @@ public class Cart extends Inventry {
 		}
 		if (flag <= 0) {
 			System.out.println("Entered quantity is not found ");
-			flag = 0;
+			
 		}
-		flag = 0;
+	
 	}
 
 	public void cartView() {
-		System.out.println("there are " + ItemsInCart + " items in the cart");
+		System.out.println("there are " + cartItems + " items in the cart");
 		System.out.println("productid          Name          price          Quantity   ");
 		for (Item cartItem : cart) {
 			System.out.println(cartItem.getID() + "                   " + cartItem.getName() + "           "
@@ -72,9 +70,9 @@ public class Cart extends Inventry {
 		}
 		if (count <= 0) {
 			System.out.println("Entered item not removed ");
-			count = 0;
+		
 		}
-		count = 0;
+		
 
 	}
 
@@ -84,7 +82,6 @@ public class Cart extends Inventry {
 			cartprice += (item.getPrice() * item.getQuantity());
 		}
 		System.out.println("the price of your cart is " + cartprice);
-		cartprice = 0;
 	}
 
 	public void clearcart() {
@@ -103,7 +100,6 @@ public class Cart extends Inventry {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		price = 0;
 	}
 
 	public static void writeToBill() throws IOException {
@@ -134,7 +130,6 @@ public class Cart extends Inventry {
 		writeToBill.println("                            Please visit again                           "+"\n");
 		writeToBill.println("Date\\Time of purchase is "+dtf.format(now));
 		userCount++;
-		price = 0;
 
 		writeToBill.flush();
 		writeToBill.close();

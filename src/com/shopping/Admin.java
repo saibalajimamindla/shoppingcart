@@ -43,6 +43,7 @@ public class Admin {
 				System.out.println("\n" + "Getting you back to home screen");
 				inventry.updatingCsvData();
 				navigation.navigating();
+				break;
 
 			case 1:
 
@@ -102,7 +103,7 @@ public class Admin {
 					oldUserIdReference = (String) navigation.userId.subSequence(0, navigation.userId.length());
 					oldPasswordReference = (String) navigation.password.subSequence(0, navigation.password.length());
 					if (oldUserId.equalsIgnoreCase(oldUserIdReference)
-							& oldPassword.equalsIgnoreCase(oldPasswordReference)) {
+							&& oldPassword.equalsIgnoreCase(oldPasswordReference)) {
 						System.out.println("\n" + "Validation suscessful" + "\n");
 						System.out.println("Enter new user name");
 						newUserId = scan.next();
@@ -135,8 +136,6 @@ public class Admin {
 					e.printStackTrace();
 
 				}
-
-			case 8:
 				File LocaionToOpen = new File("D:\\Billing");
 				try {
 					if (Desktop.isDesktopSupported()) {
@@ -151,7 +150,6 @@ public class Admin {
 
 				}
 				break;
-				
 			default:
 				System.out.println("Invalid input");
 				adminIn();
@@ -164,12 +162,12 @@ public class Admin {
 	int id() {
 		Admin admin = new Admin();
 		System.out.println("Enter item ID: ");
-		System.out.println("NOTE: input should be numeric");
+		System.out.println("NOTE: input should be numeric type");
 		try {
 			int id = scan.nextInt();
 			return id;
 		} catch (Exception e) {
-			System.out.println("inavalid entry");
+			System.out.println("inavalid ");
 			admin.id();
 		}
 		return 0;
@@ -178,12 +176,12 @@ public class Admin {
 	int quantity() {
 		Admin admin = new Admin();
 		System.out.println("Enter quantity: ");
-		System.out.println("NOTE: input should be numeric");
+		System.out.println("NOTE: input should be number");
 		try {
 			int quantity = scan.nextInt();
 			return quantity;
 		} catch (Exception e) {
-			System.out.println("inavalid entry");
+			System.out.println("inavalid quantity");
 			admin.quantity();
 		}
 		return 0;
@@ -197,7 +195,7 @@ public class Admin {
 			int price = scan.nextInt();
 			return price;
 		} catch (Exception e) {
-			System.out.println("inavalid entry");
+			System.out.println("inavalid price");
 			admin.price();
 		}
 		return 0;
@@ -211,7 +209,7 @@ public class Admin {
 			String itemName = scan.next();
 			return itemName;
 		} catch (Exception e) {
-			System.out.println("inavalid entry");
+			System.out.println("inavalid name");
 			admin.price();
 		}
 		return null;

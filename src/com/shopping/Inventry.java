@@ -6,18 +6,16 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+
 
 public class Inventry {
 
 	private int invitemCount;
-	private double cartTotalPrice;
-	static ArrayList<Item> inventry = new ArrayList();
+	
+	static ArrayList<Item> inventry = new ArrayList<>();
 
 	public Inventry() {
 		invitemCount = 0;
-		cartTotalPrice = 0;
 	}
 
 	/**
@@ -57,7 +55,12 @@ public class Inventry {
 			System.out.println("Error in CsvFileWriter !!!");
 			e.printStackTrace();
 		} finally {
-
+			try {
+				fileWriter.close();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			try {
 				fileWriter.flush();
 				fileWriter.close();
@@ -107,7 +110,12 @@ public class Inventry {
 			System.out.println("Error in CsvFileWriter !!!");
 			e.printStackTrace();
 		} finally {
-
+			try {
+				fileWriter.close();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
 			try {
 				fileWriter.flush();
 				fileWriter.close();
@@ -142,7 +150,7 @@ public class Inventry {
 			fileReader = new BufferedReader(new FileReader(readFile));
 
 			// Reading the CSV file header to skip it so we can read the data
-			fileReader.readLine();
+		line =	fileReader.readLine();
 			// Read the file line by line starting from the second line
 			while ((line = fileReader.readLine()) != null) {
 				String[] cell = line.split(COMMA_DELIMITER);
